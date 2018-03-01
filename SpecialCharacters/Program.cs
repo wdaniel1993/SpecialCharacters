@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ namespace SpecialCharacters
     {
         public static void Main(string[] args)
         {
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
+            var dataPath = Path.Combine(basePath, @"data");
+
             var inputReader = new InputReader();
             var outputWriter = new OutputWriter();
             var dataProcessor = new DataProcessor();
