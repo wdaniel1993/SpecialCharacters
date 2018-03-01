@@ -22,11 +22,11 @@ namespace SpecialCharacters.Calculation
 
             if (timeToStart >= distance)
             {
-                return ride.RideDuration + input.Bonus - (timeToStart - distance);
+                return ride.RideDuration + input.Bonus - timeToStart;
             }
             else
             {
-                return ride.RideDuration - (timeToStart - distance);
+                return ride.RideDuration - distance;
             }
         }
     }
