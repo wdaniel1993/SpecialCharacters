@@ -12,9 +12,9 @@ namespace SpecialCharacters.Process
     {
         public OutputModel Process(InputModel input)
         {
+            
+
             var futureRides = input.Rides.OrderBy(x => x.LatestStart).ToList();
-            var currentRides = new List<Ride>();
-            var scheduledRides = new List<Ride>();
 
             var cars = new List<Car>();
             for (var i=0;i<input.CarCount;i++)
@@ -28,6 +28,10 @@ namespace SpecialCharacters.Process
             for (var t = 0; t <= input.SimulationSteps; t++)
             {
                 futureRides.RemoveAll(x => x.LatestStart < t);
+
+                double centroidRow;
+                double centroidColumn;
+                CalculationHelper.CalculateCentroid(futureRides, out centroidRow, out centroidColumn);
 
                 foreach (var car in cars)
                 {
@@ -56,7 +60,7 @@ namespace SpecialCharacters.Process
                     {
                         var chosenRide = futureRides.Where(ride =>
                                 CalculationHelper.CalculateTimeDifference(car.Row, car.Column, ride.StartRow,
-                                    ride.StartColumn) + t <= ride.LatestStart).OrderByDescending(x => CalculationHelper.CalculatePriority(car, x, input,t)).FirstOrDefault();
+                                    ride.StartColumn) + t <= ride.LatestStart).OrderByDescending(x => CalculationHelper.CalculatePriority(car, x, input,t, centroidRow, centroidColumn)).FirstOrDefault();
 
                         if (chosenRide != null)
                         {
