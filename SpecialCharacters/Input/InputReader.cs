@@ -12,6 +12,7 @@ namespace SpecialCharacters.Input
         public InputModel Read()
         {
             var model = new InputModel();
+
             return model;
         }
     }
