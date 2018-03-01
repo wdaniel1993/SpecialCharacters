@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,11 @@ namespace SpecialCharacters.Output
 {
     public class OutputWriter
     {
-        public void Write(OutputModel model)
+        public void Write(OutputModel model, string path)
         {
-            
+            var lines = model.CarRides.Select(x =>
+                $"{x.Rides.Length} " + string.Join(" ", x.Rides.Select(ride => ride.Index.ToString())));
+            File.WriteAllLines(path, lines);
         }
     }
 }

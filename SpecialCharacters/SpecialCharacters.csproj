@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Input\InputReader.cs" />
+    <Compile Include="Models\CarRide.cs" />
     <Compile Include="Models\InputModel.cs" />
     <Compile Include="Models\OutputModel.cs" />
+    <Compile Include="Models\Ride.cs" />
     <Compile Include="Output\OutputWriter.cs" />
     <Compile Include="Process\DataProcessor.cs" />
     <Compile Include="Program.cs" />
@@ -59,11 +61,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="data\a_example.in" />
-    <None Include="data\b_should_be_easy.in" />
-    <None Include="data\c_no_hurry.in" />
-    <None Include="data\d_metropolis.in" />
-    <None Include="data\e_high_bonus.in" />
+    <None Include="data\a_example.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\b_should_be_easy.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\c_no_hurry.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\d_metropolis.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\e_high_bonus.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

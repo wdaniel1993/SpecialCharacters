@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SpecialCharacters.Models
 {
-    public class OutputModel
+    public struct CarRide
     {
-        public CarRide[] CarRides { get; set; }
+        public Ride[] Rides { get; set; }
     }
 }
