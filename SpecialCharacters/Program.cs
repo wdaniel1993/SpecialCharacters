@@ -17,16 +17,26 @@ namespace SpecialCharacters
         {
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var dataPath = Path.Combine(basePath, @"data");
+            var fileNames = new string[]{
+                "a_example",
+                "b_should_be_easy",
+                "c_no_hurry",
+                "d_metropolis",
+                "e_high_bonus"
+            };
 
-            var inputReader = new InputReader();
-            var outputWriter = new OutputWriter();
-            var dataProcessor = new DataProcessor();
+            foreach (var fileName in fileNames)
+            {
+                var inputReader = new InputReader();
+                var outputWriter = new OutputWriter();
+                var dataProcessor = new DataProcessor();
 
-            var input = inputReader.Read(Path.Combine(dataPath, "a_example.in"));
+                var input = inputReader.Read(Path.Combine(dataPath, fileName + ".in"));
 
-            var output = dataProcessor.Process(input);
+                var output = dataProcessor.Process(input);
 
-            outputWriter.Write(output, Path.Combine(dataPath, "solution.out"));
+                outputWriter.Write(output, Path.Combine(dataPath, fileName + ".out"));
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace SpecialCharacters.Input
             };
 
             var rideLines = lines.Skip(1).ToList();
-            for (var i = 0; i < model.Rows; i++)
+            for (var i = 0; i < model.RideCount; i++)
             {
                 var rideParamns = rideLines[i].Split().Select(x => x.TryParseInt().ValueOrDefault).ToList();
                 var ride = new Ride()
