@@ -10,7 +10,7 @@ namespace SpecialCharacters.Models
     {
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int VehicleCount { get; set; }
+        public int CarCount { get; set; }
         public int RideCount { get; set; }
         public int Bonus { get; set; }
         public int SimulationSteps { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpecialCharacters.Models
 {
-    public struct Ride
+    public class Ride
     {
         public int Index { get; set; }
         public int StartRow { get; set; }
@@ -15,5 +15,8 @@ namespace SpecialCharacters.Models
         public int EndColumn { get; set; }
         public int EarliestStart { get; set; }
         public int LatestFinish { get; set; }
+        public int LatestStart { get; set; }
+        public int RideDuration { get; set; }
+        public int? Car { get; set; }
     }
 }

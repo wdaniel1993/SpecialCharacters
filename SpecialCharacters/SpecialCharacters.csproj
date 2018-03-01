@@ -49,7 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculation\CalculationHelper.cs" />
     <Compile Include="Input\InputReader.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarRide.cs" />
     <Compile Include="Models\InputModel.cs" />
     <Compile Include="Models\OutputModel.cs" />

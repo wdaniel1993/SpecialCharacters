@@ -8,6 +8,6 @@ namespace SpecialCharacters.Models
 {
     public struct CarRide
     {
-        public Ride[] Rides { get; set; }
+        public int[] Rides { get; set; }
     }
 }
