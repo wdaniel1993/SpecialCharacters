@@ -56,7 +56,14 @@ namespace SpecialCharacters.Process
                     {
                         var chosenRide = futureRides.Where(ride =>
                             CalculationHelper.CalculateTimeDifference(car.Row, car.Column, ride.StartRow,
-                                ride.StartColumn) + t <= ride.LatestStart).OrderBy(x => x.EarliestStart).FirstOrDefault();
+                                ride.StartColumn) + t <= ride.EarliestStart).OrderBy(x => x.EarliestStart).FirstOrDefault();
+
+                        if (chosenRide != null)
+                        {
+                            chosenRide = futureRides.Where(ride =>
+                                CalculationHelper.CalculateTimeDifference(car.Row, car.Column, ride.StartRow,
+                                    ride.StartColumn) + t <= ride.LatestStart).OrderBy(x => x.LatestStart).FirstOrDefault();
+                        }
 
                         if (chosenRide != null)
                         {
